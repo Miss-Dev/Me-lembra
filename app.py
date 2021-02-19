@@ -37,8 +37,8 @@ def principal(email):
     if request.method == 'GET':
         if utils.consultar(email)==False: 
            return redirect("/") 
-    email_user = str(email)  
-    lembretes = utils.listar_lembretes()  
+    email_user = str(email)    
+    lembretes = utils.listar_lembretes(email_user)  
     return render_template('principal.html', variavel=email_user, lembretes = lembretes)
 
 @app.route("/lembrete/<string:email>/", methods=["GET", "POST"])
