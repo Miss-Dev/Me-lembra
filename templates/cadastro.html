@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto&display=swap" rel="stylesheet">
+
+    <link rel="shortcut icon" type="image/x-icon" href="/static/imagens/favicon.ico">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/style_cadastro.css') }}"/>
+    <title>Cadastro</title>
+</head>
+<body>
+    <div class="logo">
+        <img src="../static/imagens/logo-lembra.png" alt="logo">
+        <!-- <p>Me lembra!</p> -->
+      </div> 
+    <div class="entrar">
+      
+        <form method="POST">
+          <!-- <div class="labels"> -->
+            <p class="texto-destaque">Cadastro</p>
+         
+          {{ form.csrf_token }}
+          
+          
+            {{ form.email.label(class='labels') }}
+            {{ form.email(class='input') }}           
+         
+         
+                 
+           
+            {{ form.senha.label(class='labels') }} 
+            {{ form.senha(class='input') }}
+         
+                  
+            
+            {{ form.senha_confirm.label(class='labels') }} 
+            {{ form.senha_confirm(class='input') }}
+            
+            {% for message in get_flashed_messages() %}
+              <div class="alert-error">Error: {{ message }}</div>
+            {% endfor %}
+        
+          <div class="labels">
+            <button class="button-entrar" type="submit">Entrar</button>
+          </div>
+        </form>  
+           
+  
+      </div>
+     
+    
+</body>
+</html>

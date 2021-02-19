@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="shortcut icon" type="image/x-icon" href="/static/imagens/favicon.ico">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/style_criarlembrete.css') }}"/>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/main.css') }}"/>
+    <title>Área dos lembretes</title>
+</head>
+<body>
+    <!-- https://www.digitalocean.com/community/tutorials/how-to-make-a-web-application-using-flask-in-python-3-pt -->
+    <div class="logo">
+        <img src="/static/imagens/logo-lembra.png" alt="logo">
+    </div>
+    
+
+    <div class="lembrete">
+        <form method="POST">
+        <p class="texto-destaque">Lembrete</p>
+        
+        {{ form.csrf_token }}
+        
+          {{ form.titulo.label(class='labels') }}
+          {{ form.titulo(class='input') }}  
+
+          {{ form.descricao.label(class='labels') }}
+          {{ form.descricao }}
+
+          {% for message in get_flashed_messages() %}
+            <div class="alert-error">{{ message }}</div>
+          {% endfor %}
+          
+          <div class="labels">
+            <button class="button-entrar" type="submit">Criar</button>
+          </div>
+
+        </form>
+
+    </div>
+
+    <footer class="banner2">       
+        Crie seus lembretes, altere e exclua! Muito Simples e dinâmico
+       
+    </footer>
+
+   
+    
+</body>
+</html>

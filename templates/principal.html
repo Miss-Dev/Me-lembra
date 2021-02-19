@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="shortcut icon" type="image/x-icon" href="/static/imagens/favicon.ico">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/style_criarlembrete.css') }}"/>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/main.css') }}"/>
+    <title>Área dos lembretes</title>
+</head>
+<body>
+    <!-- https://www.digitalocean.com/community/tutorials/how-to-make-a-web-application-using-flask-in-python-3-pt -->
+    <div class="logo">
+        <img src="/static/imagens/logo-lembra.png" alt="logo">
+    </div>
+    <a  class="criar_lembrete"  href="/lembrete/{{ variavel }}"><p>Criar lembrete</p></a>
+    <br><br>
+    <div class="caixa">
+        {% for lembrete in lembretes %}            
+                
+                <span class="caixa1">{{ lembrete['titulo'] }}</span><br>                
+                <span class="caixa2">{{ lembrete['texto'] }}</span>   
+                <hr>             
+        
+        {% endfor %}
+    </div>
+
+
+    <footer class="banner2">       
+        <p>Crie seus lembretes, altere e exclua! Muito Simples e dinâmico</p>
+        
+    </footer>
+
+   
+    
+</body>
+</html>
