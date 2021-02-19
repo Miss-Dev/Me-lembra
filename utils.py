@@ -29,13 +29,18 @@ def insert_lembrete(titulo, texto, usuario):
     lembrete = Lembretes(titulo = titulo, texto = texto, usuario_id = usuario)
     lembrete.save()
 
-def listar_lembretes():
-    return Lembretes.query.all()
+def listar_lembretes(email):
+    lemb = Lembretes.query.all()
+    lemb_result = []
+    for i in lemb:
+        if i.usuario_id == email:
+            lemb_result.append(i)
+    return lemb_result
 
 
 
-# if __name__ == '__main__':
-#     # cadastrar("samyhurtadoramos@gmail.com", "1234")
-#     consultar("samyhurtadoramos@gmail.com")
-#     # listar_usuarios()
+if __name__ == '__main__':
+    # cadastrar("samyhurtadoramos@gmail.com", "1234")
+    # consultar("samyhurtadoramos@gmail.com")
+    listar_lembretes("samyhurtadoramos@gmail.com")
     
