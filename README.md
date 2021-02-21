@@ -1,6 +1,7 @@
 # Me Lembra - Gerenciador de Lembretes
 
-![imagem-index](C:\workspace\Gerenciador_tarefas\imagem_repositorio\tela_melembra.PNG)
+![tela_melembra](https://user-images.githubusercontent.com/66747991/108638342-31be3500-7465-11eb-9bc0-3632d8263b3d.PNG)
+
 
 Uma aplicação web simples, desenvolvida em (HTML + CSS) para frontend e o microframeork Flask, backend e bibliotecas adicionais, como Flask-WTF para validação de formulários. Além disso foi utilizada a biblioteca SQLAlquemy que possibilita o desenvolvimento do banco de dados da aplicação. A aplicação ainda está em fase de desenvolvimento, não utiliza criptografia para senhas no momento.
 
