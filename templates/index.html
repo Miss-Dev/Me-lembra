@@ -42,7 +42,7 @@
           {{ form.senha(class='input') }}  
           
         {% for message in get_flashed_messages() %}
-          <div class="alert-error">Erro: {{ message }}</div>
+          <div class= "alert">Erro: {{ message }}</div>
         {% endfor %}
         <div class="labels">
           <button class="button-entrar" type="submit">Entrar</button>
