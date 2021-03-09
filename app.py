@@ -51,7 +51,8 @@ def lembrete(email):
         print('-------------------------')
         print(request.form['titulo'])            
         print('-------------------------') 
-        utils.insert_lembrete(request.form['titulo'], request.form['descricao'], email)       
+        utils.insert_lembrete(request.form['titulo'], request.form['descricao'], email)  
+        return redirect('/success/'+email+'/')    
     else:
         flash("Está faltando alguma informação")   
     return render_template('lembrete.html', form= lembrete)
