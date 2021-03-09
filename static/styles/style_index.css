@@ -132,3 +132,8 @@ body{
     color: white;
 }
 
+.alert{
+    font-size: 15px;
+    color: red;
+}
+
